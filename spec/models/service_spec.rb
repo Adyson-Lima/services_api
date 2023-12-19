@@ -28,7 +28,7 @@ RSpec.describe Service, type: :model do
 
     it 'objeto service invalido com campos obrigatorios não preenchidos?' do
       service = Service.new
-      expect(service).to be_valid
+      expect(service).to be_invalid
     end
 
   end
