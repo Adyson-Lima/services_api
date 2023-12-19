@@ -11,6 +11,11 @@ RSpec.describe Service, type: :model do
       expect(@service.name).to eq('formatação')
     end
 
+    it 'value consegue ser preenchido?' do
+      @service.value = ''
+      expect(@service.value).to eq('R$120,00')
+    end
+
   end
 
 end

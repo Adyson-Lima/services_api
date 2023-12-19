@@ -282,13 +282,13 @@ a {
 <div id="div_group_1" class="example_group passed">
   <dl style="margin-left: 0px;">
   <dt id="example_group_1" class="passed">Testes de verificação de existencia de pastas</dt>
-    <script type="text/javascript">moveProgressBar('20.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">pasta spec/models existe?</span><span class='duration'>0.02559s</span></dd>
-    <script type="text/javascript">moveProgressBar('40.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">pasta spec/controllers existe?</span><span class='duration'>0.00050s</span></dd>
-    <script type="text/javascript">moveProgressBar('60.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">pasta app/controllers/api existe?</span><span class='duration'>0.00045s</span></dd>
-    <script type="text/javascript">moveProgressBar('80.0');</script>
+    <script type="text/javascript">moveProgressBar('16.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">pasta spec/models existe?</span><span class='duration'>0.02929s</span></dd>
+    <script type="text/javascript">moveProgressBar('33.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">pasta spec/controllers existe?</span><span class='duration'>0.00037s</span></dd>
+    <script type="text/javascript">moveProgressBar('50.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">pasta app/controllers/api existe?</span><span class='duration'>0.00040s</span></dd>
+    <script type="text/javascript">moveProgressBar('66.6');</script>
     <dd class="example passed"><span class="passed_spec_name">pasta app/controllers/api/v1 existe?</span><span class='duration'>0.00042s</span></dd>
   </dl>
 </div>
@@ -300,12 +300,36 @@ a {
 <div id="div_group_3" class="example_group passed">
   <dl style="margin-left: 15px;">
   <dt id="example_group_3" class="passed">Testes de preenchimento do model Service</dt>
+    <script type="text/javascript">moveProgressBar('83.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">name consegue ser preenchido?</span><span class='duration'>0.01432s</span></dd>
+    <script type="text/javascript">makeRed('rspec-header');</script>
+    <script type="text/javascript">makeRed('div_group_3');</script>
+    <script type="text/javascript">makeRed('example_group_3');</script>
     <script type="text/javascript">moveProgressBar('100.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">name consegue ser preenchido?</span><span class='duration'>0.01657s</span></dd>
+    <dd class="example failed">
+      <span class="failed_spec_name">value consegue ser preenchido?</span>
+      <span class="duration">0.01136s</span>
+      <div class="failure" id="failure_1">
+        <div class="message"><pre>  Failure/Error: expect(@service.value).to eq(&#39;R$120,00&#39;)
+
+    expected: &quot;R$120,00&quot;
+         got: &quot;&quot;
+
+    (compared using ==)
+  # ./spec/models/service_spec.rb:16:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+        <div class="backtrace"><pre>./spec/models/service_spec.rb:16:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">14</span>    it 'value consegue ser preenchido?' do
+<span class="linenum">15</span>      @service.value = ''
+<span class="offending"><span class="linenum">16</span>      expect(@service.value).to eq('R$120,00')</span>
+<span class="linenum">17</span>    end
+<span class="linenum">18</span>
+<span class="linenum">19</span><span class="comment"># Install the coderay gem to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.05242 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "5 examples, 0 failures";</script>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.07083 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "6 examples, 1 failure";</script>
 </div>
 </div>
 </body>
