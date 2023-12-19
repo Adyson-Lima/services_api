@@ -12,7 +12,7 @@ RSpec.describe Service, type: :model do
     end
 
     it 'value consegue ser preenchido?' do
-      @service.value = ''
+      @service.value = 'R$120,00'
       expect(@service.value).to eq('R$120,00')
     end
 
