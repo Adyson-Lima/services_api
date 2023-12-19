@@ -1,6 +1,6 @@
 class Api::V1::ServicesController < ApplicationController
 
-  before_action :set_service, only: %i[show update] #show update destroy
+  before_action :set_service, only: %i[show update destroy] #show update destroy
 
   def index
     @services =Service.all 
@@ -26,6 +26,10 @@ class Api::V1::ServicesController < ApplicationController
     else
       render json: @service.errors, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @service.destroy!
   end
 
 private
