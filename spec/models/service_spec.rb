@@ -18,4 +18,14 @@ RSpec.describe Service, type: :model do
 
   end
 
+  describe 'Testes de validacao do model Service' do
+
+    it 'objeto service valido com campos obrigatorios preenchidos?' do
+      @service.name = ''
+      @service.value = ''
+      expect(@service).to be_valid
+    end
+
+  end
+
 end
