@@ -282,14 +282,14 @@ a {
 <div id="div_group_1" class="example_group passed">
   <dl style="margin-left: 0px;">
   <dt id="example_group_1" class="passed">Testes de verificação de existencia de pastas</dt>
-    <script type="text/javascript">moveProgressBar('14.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">pasta spec/models existe?</span><span class='duration'>0.02530s</span></dd>
-    <script type="text/javascript">moveProgressBar('28.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">pasta spec/controllers existe?</span><span class='duration'>0.00048s</span></dd>
-    <script type="text/javascript">moveProgressBar('42.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">pasta app/controllers/api existe?</span><span class='duration'>0.00030s</span></dd>
-    <script type="text/javascript">moveProgressBar('57.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">pasta app/controllers/api/v1 existe?</span><span class='duration'>0.00029s</span></dd>
+    <script type="text/javascript">moveProgressBar('12.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">pasta spec/models existe?</span><span class='duration'>0.02064s</span></dd>
+    <script type="text/javascript">moveProgressBar('25.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">pasta spec/controllers existe?</span><span class='duration'>0.00045s</span></dd>
+    <script type="text/javascript">moveProgressBar('37.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">pasta app/controllers/api existe?</span><span class='duration'>0.00101s</span></dd>
+    <script type="text/javascript">moveProgressBar('50.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">pasta app/controllers/api/v1 existe?</span><span class='duration'>0.00050s</span></dd>
   </dl>
 </div>
 <div id="div_group_2" class="example_group passed">
@@ -300,21 +300,41 @@ a {
 <div id="div_group_3" class="example_group passed">
   <dl style="margin-left: 15px;">
   <dt id="example_group_3" class="passed">Testes de preenchimento do model Service</dt>
-    <script type="text/javascript">moveProgressBar('71.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">name consegue ser preenchido?</span><span class='duration'>0.01259s</span></dd>
-    <script type="text/javascript">moveProgressBar('85.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">value consegue ser preenchido?</span><span class='duration'>0.00126s</span></dd>
+    <script type="text/javascript">moveProgressBar('62.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">name consegue ser preenchido?</span><span class='duration'>0.01067s</span></dd>
+    <script type="text/javascript">moveProgressBar('75.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">value consegue ser preenchido?</span><span class='duration'>0.00102s</span></dd>
   </dl>
 </div>
 <div id="div_group_4" class="example_group passed">
   <dl style="margin-left: 15px;">
   <dt id="example_group_4" class="passed">Testes de validacao do model Service</dt>
+    <script type="text/javascript">moveProgressBar('87.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">objeto service valido com campos obrigatorios preenchidos?</span><span class='duration'>0.00177s</span></dd>
+    <script type="text/javascript">makeRed('rspec-header');</script>
+    <script type="text/javascript">makeRed('div_group_4');</script>
+    <script type="text/javascript">makeRed('example_group_4');</script>
     <script type="text/javascript">moveProgressBar('100.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">objeto service valido com campos obrigatorios preenchidos?</span><span class='duration'>0.00127s</span></dd>
+    <dd class="example failed">
+      <span class="failed_spec_name">objeto service invalido com campos obrigatorios não preenchidos?</span>
+      <span class="duration">0.17645s</span>
+      <div class="failure" id="failure_1">
+        <div class="message"><pre>  Failure/Error: expect(service).to be_valid
+    expected #&lt;Service id: nil, name: nil, value: nil, created_at: nil, updated_at: nil&gt; to be valid, but got errors: Name can&#39;t be blank, Value can&#39;t be blank
+  # ./spec/models/service_spec.rb:31:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+        <div class="backtrace"><pre>./spec/models/service_spec.rb:31:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">29</span>    it 'objeto service invalido com campos obrigatorios não preenchidos?' do
+<span class="linenum">30</span>      service = Service.new
+<span class="offending"><span class="linenum">31</span>      expect(service).to be_valid</span>
+<span class="linenum">32</span>    end
+<span class="linenum">33</span>
+<span class="linenum">34</span><span class="comment"># Install the coderay gem to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.05221 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "7 examples, 0 failures";</script>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.22537 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "8 examples, 1 failure";</script>
 </div>
 </div>
 </body>
