@@ -28,4 +28,13 @@ RSpec.describe Api::V1::ServicesController, type: :controller do
     end
   end
 
+  describe 'PATCH /api/v1/services/id' do
+    it 'Consegue atualizar um service e retornar status 200?' do
+      service = Service.last
+      patch :update, params: {service: {name: 'troca de fonte', value: 'R$150,00'}, id: service.id}
+      expect(response.body).to include_json(value: 'R$150,00')
+      expect(response).to have_http_status(200)
+    end
+  end
+
 end
