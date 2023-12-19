@@ -37,4 +37,13 @@ RSpec.describe Api::V1::ServicesController, type: :controller do
     end
   end
 
+  describe 'DELETE /api/v1/services/id' do
+    it 'Consegue excluir um service e retornar status 204?' do
+      service = Service.last
+      delete :destroy, params: {id: service.id}
+      expect(Service.all).not_to include(service)
+      expect(response).to have_http_status(204)
+    end
+  end
+
 end
