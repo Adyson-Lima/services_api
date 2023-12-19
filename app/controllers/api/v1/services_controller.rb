@@ -11,6 +11,15 @@ class Api::V1::ServicesController < ApplicationController
     render json: @service
   end
 
+  def create
+    @service = Service.new(service_params)
+    if @service.save
+      render json: @service, status: :created, location: api_v1_service_url(@service)
+    else
+      render json: @service.errors, status: :unprocessable_entity
+    end
+  end
+
 private
 
 def set_service
