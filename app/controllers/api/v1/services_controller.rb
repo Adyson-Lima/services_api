@@ -1,10 +1,14 @@
 class Api::V1::ServicesController < ApplicationController
 
-  #before_action :set_service, only: %i[] #show update destroy
+  before_action :set_service, only: %i[show] #show update destroy
 
   def index
     @services =Service.all 
     render json: @services
+  end
+
+  def show
+    render json: @service
   end
 
 private
