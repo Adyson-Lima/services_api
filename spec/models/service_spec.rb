@@ -21,8 +21,8 @@ RSpec.describe Service, type: :model do
   describe 'Testes de validacao do model Service' do
 
     it 'objeto service valido com campos obrigatorios preenchidos?' do
-      @service.name = ''
-      @service.value = ''
+      @service.name = 'troca de memória'
+      @service.value = 'R$100,00'
       expect(@service).to be_valid
     end
 
