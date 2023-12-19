@@ -7,7 +7,7 @@ RSpec.describe Service, type: :model do
   describe 'Testes de preenchimento do model Service' do
 
     it 'name consegue ser preenchido?' do
-      @service.name = ''
+      @service.name = 'formatação'
       expect(@service.name).to eq('formatação')
     end
 
