@@ -1,6 +1,6 @@
 class Api::V1::ServicesController < ApplicationController
 
-  before_action :set_service, only: %i[show] #show update destroy
+  before_action :set_service, only: %i[show update] #show update destroy
 
   def index
     @services =Service.all 
@@ -15,6 +15,14 @@ class Api::V1::ServicesController < ApplicationController
     @service = Service.new(service_params)
     if @service.save
       render json: @service, status: :created, location: api_v1_service_url(@service)
+    else
+      render json: @service.errors, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    if @service.update(service_params)
+      render json: @service
     else
       render json: @service.errors, status: :unprocessable_entity
     end
